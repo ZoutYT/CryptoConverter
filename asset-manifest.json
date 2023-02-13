@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CryptoConverter/crypto_covert/static/css/main.1174df25.chunk.css",
-    "main.js": "/CryptoConverter/crypto_covert/static/js/main.9d0d6608.chunk.js",
-    "main.js.map": "/CryptoConverter/crypto_covert/static/js/main.9d0d6608.chunk.js.map",
+    "main.js": "/CryptoConverter/crypto_covert/static/js/main.eef3a7cf.chunk.js",
+    "main.js.map": "/CryptoConverter/crypto_covert/static/js/main.eef3a7cf.chunk.js.map",
     "runtime-main.js": "/CryptoConverter/crypto_covert/static/js/runtime-main.f93b8355.js",
     "runtime-main.js.map": "/CryptoConverter/crypto_covert/static/js/runtime-main.f93b8355.js.map",
     "static/css/2.da1be991.chunk.css": "/CryptoConverter/crypto_covert/static/css/2.da1be991.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.da1be991.chunk.css",
     "static/js/2.453f574c.chunk.js",
     "static/css/main.1174df25.chunk.css",
-    "static/js/main.9d0d6608.chunk.js"
+    "static/js/main.eef3a7cf.chunk.js"
   ]
 }
