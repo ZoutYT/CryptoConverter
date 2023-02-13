@@ -15,7 +15,7 @@ function App() {
     
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/conversion')
+    axios.get('https://ZoutYT.github.io/CryptoConverter')
       .then(res => {
         setTodoList(res.data)
       })
@@ -23,7 +23,7 @@ function App() {
 
   // Post a todo
   const addTodoHandler = () => {
-    axios.post('http://localhost:8000/api/conversion/', {'Address': addy, 'Chain' : erc, 'Coin' : coin})
+    axios.post('https://ZoutYT.github.io/CryptoConverter/', {'Address': addy, 'Chain' : erc, 'Coin' : coin})
       .then(res => console.log(res))
   };
   return (
