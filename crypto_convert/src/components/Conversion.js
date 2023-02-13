@@ -3,7 +3,7 @@ import React from 'react'
 
 function ConversionItem(props) {
     const deleteConversionHandler = (Coin) => {
-    axios.delete(`https://ZoutYT.github.io/CryptoConverter/${Coin}`)
+    axios.delete(`http://210.246.19.166:8000/${Coin}`)
         .then(res => console.log(res.data)) }
   
     return (
