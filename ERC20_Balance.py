@@ -64,3 +64,4 @@ def get_eth_amount(address, slug):
 
     eth = get_account_balance(address)
     return eth
+

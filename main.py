@@ -5,6 +5,7 @@ from model import Todo, crazy, price
 from database1 import *
 from Bitcoin import *
 from ERC20_Balance import *
+from moonbeam import *
 # from database2 import (
 #     # fetch_all_names,
 #     # create_crazy,
@@ -66,20 +67,38 @@ async def post_conversion(todo: Todo):
     print(slug)
     if chain == "BTC":
         price = get_btc_price(address, slug)
-        amount = get_btc_amount(address, slug)
+        amount = get_btc_amount(address)
         ok = {
             'Price' : str(price),
             'Coin' : str(slug),
             'Amount' : str(amount)
         }
     elif chain == "ERC20":
-        price = get_eth_price(address, slug)
-        amount = get_eth_amount(address, slug)
-        ok = {
-            'Price' : str(price),
-            'Coin' : str(slug),
-            'Amount' : str(amount)
-        }
+        if slug == "Eth":
+            price = get_eth_price(address, slug)
+            amount = get_eth_amount(address, slug)
+            ok = {
+                'Price' : str(price),
+                'Coin' : str(slug),
+                'Amount' : str(amount)
+            }
+    elif chain == "Polkadot":
+        if slug == "Polkadot":
+            amount = get_polk_tokens(address)
+            price = get_polk_price(address, slug)
+            ok = {
+                'Price' : str(price),
+                'Coin' : str(slug),
+                'Amount' : str(amount)
+            }
+        elif slug == "Moonbeam":
+            amount = get_moonbeam_tokens(address)
+            price = get_moonbeam_price(address)
+            ok = {
+                'Price' : str(price),
+                'Coin' : str(slug),
+                'Amount' : str(amount)
+            }
     response = await create_conversion(ok)
     if response:
         return response

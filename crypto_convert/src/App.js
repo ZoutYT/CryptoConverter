@@ -35,20 +35,26 @@ function App() {
           <option value="ERC20">ERC20</option>
           <option value="BTC">BTC</option>
           <option value="Polkadot">Polkadot</option>
-          <option value="text4">Text 4</option>
         </select>
         <div>
           {erc === 'ERC20' &&(
             <select className="mb-2 form-control titleIn" onClick={event => setCoin(event.target.value)}>
             <option value="Eth">Ethereum</option>
-            <option value="Moonbeam">Moonbeam</option>
           </select>
           )}
         </div>
         <div>
           {erc === 'BTC' &&(
             <select className="mb-2 form-control titleIn" onClick={event => setCoin(event.target.value)}>
-            <option value="Bitcoin">BTC</option>
+            <option value="Bitcoin">Bitcoin</option>
+          </select>
+          )}
+        </div>
+        <div>
+          {erc === 'Polkadot' &&(
+            <select className="mb-2 form-control titleIn" onClick={event => setCoin(event.target.value)}>
+            <option value="Polkadot">Polkadot</option>
+            <option value="Moonbeam">Moonbeam</option>
           </select>
           )}
         </div>

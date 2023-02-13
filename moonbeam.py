@@ -3,11 +3,11 @@ import requests
 import json
 from requests.structures import CaseInsensitiveDict
 from Coinmarketcap import *
-def get_polk_price(address, slug):
-    slug = "6636"
-    Dot_Value = 10**10
-    Dot_Price = getprice(slug)
-    URL = "https://polkadot.api.subscan.io/api/scan/account/tokens"
+def get_moonbeam_price(address):
+    slug = "6836"
+    moonbeam_price = getprice(slug)
+    moonbeam_value = 10**18
+    URL = "https://moonbeam.api.subscan.io/api/scan/account/tokens"
     headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'e7e864a7bed146fca9db9bba7965148d',
@@ -19,13 +19,11 @@ def get_polk_price(address, slug):
 
     response = requests.post(URL, headers=headers, json=json_data)
     value = response.json()["data"]["native"][0]["balance"]
-    Value_dot = (float(value) / Dot_Value) * Dot_Price
-    return Value_dot
-
-def get_polk_tokens(address):
-    slug = "6636"
-    Dot_Value = 10**10
-    URL = "https://polkadot.api.subscan.io/api/scan/account/tokens"
+    value = (float(value) / moonbeam_value) * moonbeam_price
+    return value
+def get_moonbeam_tokens(address):
+    moonbeam_value = 10**18
+    URL = "https://moonbeam.api.subscan.io/api/scan/account/tokens"
     headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'e7e864a7bed146fca9db9bba7965148d',
@@ -37,7 +35,7 @@ def get_polk_tokens(address):
 
     response = requests.post(URL, headers=headers, json=json_data)
     value = response.json()["data"]["native"][0]["balance"]
-    value = (float(value) / Dot_Value)
+    value = (float(value) / moonbeam_value)
     return value
 
 
